@@ -1,6 +1,8 @@
-import { FC, Suspense, lazy } from "react";
+import { FC, Suspense, lazy, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Loader } from "./components";
+import { useAppDispatch } from "./services/hooks/reduxHooks";
+import { fetchJobsList } from "./redux/jobsList/jobsListOperations";
 
 const JobListPage = lazy(() => import("./pages/JobListPage/JobListPage"));
 const DetailedJobPage = lazy(
@@ -8,6 +10,10 @@ const DetailedJobPage = lazy(
 );
 
 const App: FC = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchJobsList());
+  }, [dispatch]);
   return (
     <Suspense fallback={<Loader />}>
       <Routes>

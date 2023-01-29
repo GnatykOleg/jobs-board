@@ -4,8 +4,8 @@ import { JobsList } from "../../components";
 
 const JobListPage: FC = () => {
   return (
-    <main>
-      <section className="pt-[9px] xl:pt-[30px]">
+    <main className="bg-[#e6e9f2] pt-[9px] xlMin:pt-[30px] pb-[9px] xlMin:pb-[64px]">
+      <section className="">
         <h1 className="hidden">Detailed Job Page</h1>
         <div className="container">
           <JobsList />

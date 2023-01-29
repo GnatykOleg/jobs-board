@@ -14,6 +14,7 @@ export const fetchJobsList = createAsyncThunk<
 
     return data;
   } catch (error: any) {
+    alert(error.message);
     return rejectWithValue(error.message);
   }
 });

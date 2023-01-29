@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import JobsItem from "./JobsItem";
+import JobsItem from "../JobsItem/JobsItem";
 
 const JobsList: FC = () => {
   return (

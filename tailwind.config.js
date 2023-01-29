@@ -16,10 +16,12 @@ module.exports = {
       xlMax: { max: "1535px" },
     },
     container: {
+      padding: 9,
       center: true,
     },
     extend: {
       colors: {
+        borderColor: "#FFCF00",
         cardBg: "#EFF0F5",
         primaryTextColor: "#3a4562",
         secondaryTextColor: "#878d9d",
@@ -29,7 +31,7 @@ module.exports = {
         employmentTypeBackgroundColor: "rgba(161, 177, 219, 0.317343)",
         employmentTypeBorderColor: " 1px solid rgba(85, 105, 158, 0.3)",
         benefitsTextColor: "#988b49",
-        benefitsBackgroundColor: "#ffcf00",
+        benefitsBackgroundColor: "rgba(255, 207, 0, 0.15)",
         buttonBgColor: "#384564",
       },
     },

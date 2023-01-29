@@ -1,25 +1,21 @@
 import { FC } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useAppSelector } from "../../services/hooks/reduxHooks";
 import { dataSelector } from "../../redux/jobsList/jobsListSelectors";
 
-import NoDataHelper from "../../components/NoDataHelper";
-
-import Responsopilities from "../../components/JobDetail/Responsopilities/Responsopilities";
-
-import MainDescription from "../../components/JobDetail/MainDescription/MainDescription";
-
-import CompensationAndBenefits from "../../components/JobDetail/CompensationAndBenefits/CompensationAndBenefits";
-
-import AttachedImages from "../../components/JobDetail/AttachedImages/AttachedImages";
-
-import AdditionalInfo from "../../components/JobDetail/AdditionalInfo/AdditionalInfo";
-
-import sprite from "../../assets/icons/sprite.svg";
+import {
+  NoDataHelper,
+  Responsopilities,
+  MainDescription,
+  CompensationAndBenefits,
+  AttachedImages,
+  AdditionalInfo,
+  Map,
+  ButtonBack,
+} from "../../components";
 
 const DetailedJobPage: FC = () => {
   const { postId } = useParams();
-  const navigate = useNavigate();
 
   const data = useAppSelector(dataSelector);
 
@@ -82,21 +78,20 @@ const DetailedJobPage: FC = () => {
             />
           </div>
 
-          <button
-            className="mt-[97px] flex items-center transition-all hover:scale-105"
-            onClick={() => navigate("/")}
-          >
-            <svg width={20} height={20}>
-              <use href={`${sprite}#arrow`}></use>
-            </svg>
-            <span className="ml-[10px] text-sm font-semibold text-primaryTextColor">
-              RETURN TO JOB BOARD
-            </span>
-          </button>
+          <div className="lgMax:hidden">
+            <ButtonBack />
+          </div>
         </div>
+        <Map
+          location={location}
+          adress={address}
+          email={email}
+          phone={phone}
+          name={name}
+        />
 
-        <div className="bg-black w-[372px] h-[436px] xlMin:w-[402px] text-white">
-          MAP
+        <div className="xlMin:hidden">
+          <ButtonBack />
         </div>
       </div>
     </div>

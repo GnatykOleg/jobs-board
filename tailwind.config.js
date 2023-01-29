@@ -21,6 +21,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        mapBG: "#2A3047",
         borderColor: "#FFCF00",
         cardBg: "#EFF0F5",
         primaryTextColor: "#3a4562",

@@ -26,7 +26,6 @@ const DetailedJobPage: FC = () => {
   }
 
   const {
-    id,
     name,
     email,
     phone,
@@ -34,7 +33,7 @@ const DetailedJobPage: FC = () => {
     salary,
     address,
     createdAt,
-    updatedAt,
+
     description,
     benefits,
     location,
